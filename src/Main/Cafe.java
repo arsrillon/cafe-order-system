@@ -9,44 +9,47 @@ public class Cafe {
     public void addOrder(Order order) {
         this.order.add(order);
     }
-    public void showAllOrders() {
-        System.out.println();
-        for(Order i : order) {
-            i.showInfo();
+
+    public String getAllOrdersInfo() {
+        if (order.isEmpty()) {
+            return "No orders yet.";
         }
-        System.out.println();
+        StringBuilder sb = new StringBuilder();
+        for (Order i : order) {
+            sb.append(i.getInfo()).append("\n");
+        }
+        return sb.toString();
     }
-    public void findOrder(String customerName) {
+
+    public String findOrderInfo(String customerName) {
         boolean found = false;
-        System.out.println();
-        for(Order i : order) {
-            if(i.getCustomerName().equalsIgnoreCase(customerName)) {
-                i.showInfo();
+        StringBuilder sb = new StringBuilder();
+        for (Order i : order) {
+            if (i.getCustomerName().equalsIgnoreCase(customerName)) {
+                sb.append(i.getInfo()).append("\n");
                 found = true;
             }
         }
-        if(!found) {
-            System.out.println();
-            System.out.println("Order is not found!");
+        if (!found) {
+            return "Order is not found!";
         }
+        return sb.toString();
     }
-    public void removeOrder(String customerName) {
+
+    public String removeOrder(String customerName) {
         boolean found = false;
         Iterator<Order> iterator = order.iterator();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
             Order o = iterator.next();
-            if(o.getCustomerName().equalsIgnoreCase(customerName)) {
+            if (o.getCustomerName().equalsIgnoreCase(customerName)) {
                 iterator.remove();
                 found = true;
-                System.out.println();
-                System.out.println("Removed!");
-                System.out.println();
             }
         }
-        if(found) {
-            System.out.println("Orders for " + customerName + " have been removed.");
+        if (found) {
+            return "Orders for " + customerName + " have been removed.";
         } else {
-            System.out.println("No orders found for " + customerName + ".");
+            return "No orders found for " + customerName + ".";
         }
     }
 }

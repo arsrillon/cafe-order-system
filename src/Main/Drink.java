@@ -7,7 +7,7 @@ public class Drink extends Order {
         this.volume = volume;
     }
     @Override
-    public void showInfo() {
-        System.out.println("Customer: " + getCustomerName() + ". Dish: " + getDishName() + ". Price: " + getPrice() + ". Volume: " + volume + ".");
+    public String getInfo() {
+        return "Customer: " + getCustomerName() + ". Dish: " + getDishName() + ". Price: " + getPrice() + ". Volume: " + volume + ".";
     }
 }

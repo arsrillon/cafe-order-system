@@ -7,7 +7,7 @@ public class Food extends Order {
         this.calories = calories;
     }
     @Override
-    public void showInfo() {
-        System.out.println("Customer: " + getCustomerName() + ". Dish: " + getDishName() + ". Price: " + getPrice() + ". Calories: " + calories + ".");
+    public String getInfo() {
+        return "Customer: " + getCustomerName() + ". Dish: " + getDishName() + ". Price: " + getPrice() + ". Calories: " + calories + ".";
     }
 }

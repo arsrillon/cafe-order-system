@@ -15,8 +15,8 @@ public abstract class Order {
         this.price = price;
     }
 
-    public void showInfo() {
-        System.out.println("Customer: " + customerName + ". Dish: " + dishName + ". Price: " + price + ".");
+    public String getInfo() {
+        return "Customer: " + customerName + ". Dish: " + dishName + ". Price: " + price + ".";
     }
     public String getCustomerName() {
         return customerName;
