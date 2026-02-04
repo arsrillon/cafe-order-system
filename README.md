@@ -12,3 +12,9 @@ Created as a pet project to practice Object-Oriented Programming (OOP).
 ## Technologies
 - Java 21  
 - Console-based interface (no external libraries)
+
+## How to run
+- Clone the repository:
+  
+  ```bash
+  git clone https://github.com/arsrillon/cafe-order-system.git
